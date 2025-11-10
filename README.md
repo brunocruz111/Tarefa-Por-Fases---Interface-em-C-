@@ -5,7 +5,7 @@
 
 ## 👥 Equipe
 
-| Nome completo | Função |
+| Nome completo | RA |
 |----------------|--------|
 | *Bruno Luiz da Cruz* | 2705974  |
 | *Kaique Patrício de Sousa* | 2301520 |
