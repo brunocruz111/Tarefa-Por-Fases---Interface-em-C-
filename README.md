@@ -7,8 +7,11 @@
 
 | Nome completo | Função |
 |----------------|--------|
-| *Kaique Patrício de Sousa* | Desenvolvedor |
-| *Bruno Luiz da Cruz* | Desenvolvedor |
+| *Bruno Luiz da Cruz* | 2705974  |
+| *Kaique Patrício de Sousa* | 2301520 |
+| *Pablo Weber* | 1889443 |
+
+/
 
 ---
 
@@ -17,30 +20,6 @@
 | Fase | Descrição | Pasta |
 |------|------------|--------|
 | *Fase 0* | Aquecimento conceitual – contratos de capacidade (sem código) | src/fase-00-aquecimento/ |
-
----
-
-## 🧩 Fase 0 — Aquecimento Conceitual: Contratos de Capacidade (sem código)
-
-### Caso 1 – Confirmação de Agendamento
-
-*Objetivo:* Garantir que o cliente receba a confirmação do serviço agendado na barbearia.  
-*Contrato:* Confirmar o agendamento do cliente.  
-*Implementação A:* Envio automático de mensagem via *WhatsApp* com os dados do serviço e horário.  
-*Implementação B:* Envio de *e-mail* com as mesmas informações do agendamento.  
-*Política:* Se o cliente possuir número de WhatsApp válido, enviar mensagem por WhatsApp; caso contrário, enviar e-mail.  
-*Risco/Observação:* A mensagem por WhatsApp pode não ser entregue em caso de número incorreto ou conexão instável; o e-mail pode ir para a caixa de spam.
-
----
-
-### Caso 2 – Lembrete de Horário
-
-*Objetivo:* Reduzir o número de faltas, lembrando o cliente sobre o horário do agendamento.  
-*Contrato:* Enviar lembrete de horário ao cliente.  
-*Implementação A:* Envio de *notificação dentro do aplicativo AgendaBem* algumas horas antes do atendimento.  
-*Implementação B:* Envio de *mensagem via WhatsApp* lembrando o horário marcado.  
-*Política:* Se o cliente tiver o aplicativo instalado e com notificações ativas, usar a notificação interna; caso contrário, enviar mensagem pelo WhatsApp.  
-*Risco/Observação:* O uso de notificações depende da permissão ativa no celular; o WhatsApp pode ser ignorado caso o cliente não veja a mensagem a tempo.
 
 ---
 
@@ -72,6 +51,36 @@ O objetivo é apenas *refletir sobre design e alternância de implementações*.
 
 ## 🧾 Evidências de Teste
 (Não aplicável nesta fase, pois não há código executável.)
+
+---
+### Decisões de design da Fase 1
+- Mantivemos um *contrato único*: “notificar cliente sobre agendamento”.
+- A escolha do canal foi movida para *política externa* (ponto de composição), para o cliente não precisar mudar.
+- Identificamos que na próxima fase será útil ter *interface de notificação* para evitar if/switch.
+
+---
+
+### Checklist de qualidade aplicado
+- [x] Contrato descreve o “o que” e não o “como”.
+- [x] Implementações alternáveis para o mesmo objetivo (WhatsApp / app).
+- [x] Política concreta de escolha de canal.
+- [x] Cliente não precisa mudar quando trocar o canal.
+- [ ] Testes sem I/O (não se aplica nesta fase, pois não há código).
+
+---
+
+### 🧾 Evidências de testes
+- Fase conceitual, sem código.
+
+---
+## 🗂️ Estrutura do Repositório
+  repo-raiz/
+ ├── README.md                # arquivo geral (índice do projeto)
+ ├── src/
+ │    ├── Fase0/
+ │    │     └── Fase0.md     # conteúdo detalhado da Fase 0
+ │    ├── Fase1/
+ │    │     └── Fase1.md     # conteúdo detalhado da Fase 1
 
 ---
 
