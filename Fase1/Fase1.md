@@ -1,5 +1,5 @@
 # 💈 Fase 1 — Heurística antes do código (mapa mental)
-(Tema: AgendaBem)
+(Tema: Agendandamento)
 
 ---
 
