@@ -17,17 +17,6 @@
 | Fase | Descrição | Pasta |
 |------|------------|--------|
 | *Fase 0* | Aquecimento conceitual – contratos de capacidade (sem código) | src/fase-00-aquecimento/ |
-| *Fase 1* | Heurística antes do código (mapa mental) | src/fase-01-procedural/ |
-| *Fase 2* | Procedural mínimo (modos simples e fronteiras) | src/fase-02-oo-sem-interface/ |
-| *Fase 3* | OO sem interface | src/fase-03-com-interfaces/ |
-| *Fase 4* | Interface plugável e testável | src/fase-04-repository-inmemory/ |
-| *Fase 5* | Essenciais de interfaces em C# | src/fase-05-repository-csv/ |
-| *Fase 6* | ISP na prática (segregação por capacidade) | src/fase-06-repository-json/ |
-| *Fase 7* | Repository InMemory | src/fase-07-isp/ |
-| *Fase 8* | Repository CSV | src/fase-08-testes-dubles/ |
-| *Fase 9* | Repository JSON | src/fase-09-cheiros-antidotos/ |
-| *Fase 10* | Testabilidade: dublês e costuras | src/fase-10-eixos-opcional/ |
-| *Fase 11* | Cheiros e antídotos | src/fase-11-mini-projeto/ |
 
 ---
 
