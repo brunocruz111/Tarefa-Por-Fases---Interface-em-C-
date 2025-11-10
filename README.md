@@ -11,7 +11,6 @@
 | *Kaique Patrício de Sousa* | 2301520 |
 | *Pablo Weber* | 1889443 |
 
-/
 
 ---
 
