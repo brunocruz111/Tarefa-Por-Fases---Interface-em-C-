@@ -83,6 +83,10 @@ O objetivo é apenas *refletir sobre design e alternância de implementações*.
 - Fase conceitual, sem código.
 
 ---
+## FASE 2
+---
+
+---
 ```
 ## 🗂️ Estrutura do Repositório
   repo-raiz/
