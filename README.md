@@ -54,7 +54,7 @@ O objetivo é apenas *refletir sobre design e alternância de implementações*.
 (Não aplicável nesta fase, pois não há código executável.)
 
 ---
-### FASE 1
+## FASE 1
 ---
 
 ## ⚙️ Como Executar e Testar
