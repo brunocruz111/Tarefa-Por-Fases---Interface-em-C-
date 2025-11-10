@@ -48,10 +48,6 @@
 
 Esta fase não contém código-fonte executável.  
 O objetivo é apenas *refletir sobre design e alternância de implementações*.  
-A partir da *Fase 1*, cada pasta incluirá:
-- Um arquivo README.md com instruções específicas;  
-- Código C# referente à fase;  
-- Exemplos de execução e testes unitários.
 
 ---
 
@@ -75,7 +71,7 @@ A partir da *Fase 1*, cada pasta incluirá:
 ---
 
 ## 🧾 Evidências de Teste
-(Não aplicável nesta fase, pois não há código executável. As evidências serão incluídas a partir da Fase 2.)
+(Não aplicável nesta fase, pois não há código executável.)
 
 ---
 
