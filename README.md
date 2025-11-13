@@ -1,5 +1,10 @@
 # 🧠 Projeto: AgendaBem  
 ### Fase 0 — Aquecimento Conceitual (Contratos de Capacidade)
+---
+
+[Fase0](./src/Fase0)
+[Fase1](./src/Fase1)
+[Fase2](./src/Fase2)
 
 ---
 
@@ -93,9 +98,11 @@ O objetivo é apenas *refletir sobre design e alternância de implementações*.
  ├── README.md                # arquivo geral (índice do projeto)
  ├── src/
  │    ├── Fase0/
- │    │     └── Fase0.md     # conteúdo detalhado da Fase 0
+ │    │     └── Aquecimento.md     # conteúdo detalhado da Fase 0
  │    ├── Fase1/
- │    │     └── Fase1.md     # conteúdo detalhado da Fase 1
+ │    │     └── Heuristica.md     # conteúdo detalhado da Fase 1
+ |    ├── Fase2/
+ |    |     └── Procedural.cs     
 ```
 
 ---
