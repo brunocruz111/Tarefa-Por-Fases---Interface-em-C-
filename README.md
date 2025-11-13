@@ -25,12 +25,12 @@
 ## 📘 Sumário de Fases
 
 | Fase | Descrição |
-|------|------------|--------|
+|------|------------|
 | *Fase 0* | Aquecimento conceitual – contratos de capacidade |
 | *Fase 1* | Heurística antes do código | 
 | *Fase 2* | Procedural mínimo (ex.: formatar texto) | 
 | *Fase 3* | OO sem interface | 
-|------|------------|--------|
+|------|------------|
 
 ---
 
