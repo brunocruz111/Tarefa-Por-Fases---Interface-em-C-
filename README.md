@@ -9,7 +9,6 @@
 | *Bruno Luiz da Cruz* | 2705974  |
 | *Kaique Patrício de Sousa* | 2301520 |
 | *Pablo Weber* | 1889443 |
-|----------------|--------|
 
 ---
 
@@ -30,7 +29,6 @@
 | *Fase 1* | Heurística antes do código | 
 | *Fase 2* | Procedural mínimo (ex.: formatar texto) | 
 | *Fase 3* | OO sem interface | 
-|------|------------|
 
 ---
 
