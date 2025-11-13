@@ -2,9 +2,11 @@
 ### Fase 0 — Aquecimento Conceitual (Contratos de Capacidade)
 ---
 
-[Fase0](./src/Fase0)|
-[Fase1](./src/Fase1)|
-[Fase2](./src/Fase2)
+-[Fase0](./src/Fase0)|
+-[Fase1](./src/Fase1)|
+-[Fase2](./src/Fase2)|
+-[Fase3](./src/Fase3)|
+
 
 ---
 
