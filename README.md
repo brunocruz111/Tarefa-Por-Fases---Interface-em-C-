@@ -1,4 +1,5 @@
 # 🧠 Projeto: AgendaBem  
+
 ---
 
 ## 👥 Equipe
@@ -23,10 +24,13 @@
 
 ## 📘 Sumário de Fases
 
-| Fase | Descrição | Pasta |
+| Fase | Descrição |
 |------|------------|--------|
-| *Fase 0* | Aquecimento conceitual – contratos de capacidade | src/Fase0/Fase0.md |
-| *Fase 1* | Heurística antes do código | src/Fase01/Fase1.md |
+| *Fase 0* | Aquecimento conceitual – contratos de capacidade |
+| *Fase 1* | Heurística antes do código | 
+| *Fase 2* | Procedural mínimo (ex.: formatar texto) | 
+| *Fase 3* | OO sem interface | 
+|------|------------|--------|
 
 ---
 
@@ -44,7 +48,7 @@
  |    ├── Fase2/
  |    |     └── Procedural.cs     # conteúdo detalhado da Fase 2]
  │    │     └── README.md         
- |    ├── [Fase3](./src/Fase3)/
+ |    ├── Fase3/
  |    |     └── MensagemAgendamento.cs
  |    |     └── MensagemConfirmacao.cs
  |    |     └── MensagemFactory.cs
@@ -53,5 +57,4 @@
  |    |     └── MensagemReagendamento.cs
  |    |     └── Program.cs
  |    |     └── Objetivo.md      # conteúdo detalhado da Fase 3
-
 ```
