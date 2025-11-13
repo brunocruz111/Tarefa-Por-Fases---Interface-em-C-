@@ -1,3 +1,5 @@
+## FASE 2
+---
 ## 1. Objetivo da fase
 Implementar um fluxo *procedural* (sem OO e sem interface ainda) que gere mensagens para o cliente do AgendaBem de acordo com o tipo de evento do agendamento.
 
