@@ -44,7 +44,7 @@
  │    │     └── Heuristica.md     # conteúdo detalhado da Fase 1
  │    │     └── README.md         
  |    ├── Fase2/
- |    |     └── Procedural.cs     # conteúdo detalhado da Fase 2]
+ |    |     └── Procedural.cs     # conteúdo detalhado da Fase 2
  │    │     └── README.md         
  |    ├── Fase3/
  |    |     └── MensagemAgendamento.cs
@@ -55,4 +55,5 @@
  |    |     └── MensagemReagendamento.cs
  |    |     └── Program.cs
  |    |     └── Objetivo.md      # conteúdo detalhado da Fase 3
+ │    │     └── README.md      
 ```
