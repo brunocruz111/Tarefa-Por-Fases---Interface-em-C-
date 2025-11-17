@@ -50,9 +50,9 @@ Isso mostra que uma mesma classe pode assumir diferentes papéis.
 ### ✔️ 2. Criar uma classe que implementa ambas as interfaces
 
 Por exemplo:
-
+```
 public class ConfirmationMessage : IMessageGenerator, IMessageFormatter
-
+```
 
 Isso demonstra o uso do múltiplo contrato em C# para reforçar capacidades distintas.
 
@@ -67,18 +67,18 @@ Você não quer expor o método diretamente no objeto público
 Deseja separar "papéis" sem misturar métodos
 
 Exemplo típico:
-
+```
 string IMessageFormatter.Format(...)
-
+```
 
 Isso impede que o método apareça como parte da API pública, sendo acessível apenas via cast para a interface.
 
 ### ✔️ **4. Demonstrar o uso de generics com constraints
 
 Exemplo:
-
+```
 public class MessageService<T> where T : IMessageGenerator
-
+```
 
 Uso recomendado quando:
 
