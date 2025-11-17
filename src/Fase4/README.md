@@ -111,14 +111,14 @@ Assert.Equal("João", fake.UltimaEntrada);
 
 ## 📌 Benefícios conquistados na Fase 4
 
-Cliente não muda mais ao trocar o tipo de mensagem
+_Cliente não muda mais ao trocar o tipo de mensagem
 
-Redução de acoplamento e maior reuso
+_Redução de acoplamento e maior reuso
 
-Possibilidade de múltiplas políticas de escolha
+_Possibilidade de múltiplas políticas de escolha
 
-Testes unitários sem depender de strings reais
+_Testes unitários sem depender de strings reais
 
-Código preparado para ISP, repositorios e políticas futuras
+_Código preparado para ISP, repositorios e políticas futuras
 
-A partir daqui o projeto já entra em um padrão profissional de extensibilidade.
+### A partir daqui o projeto já entra em um padrão profissional de extensibilidade.
