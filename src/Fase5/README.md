@@ -47,7 +47,7 @@ IMessageFormatter → responsável por formatar detalhes ou ajustar texto
 
 Isso mostra que uma mesma classe pode assumir diferentes papéis.
 
-### ✔️ 2. Criar uma classe que implementa ambas as interfaces
+#### ✔️ 2. Criar uma classe que implementa ambas as interfaces
 
 Por exemplo:
 ```
@@ -56,7 +56,7 @@ public class ConfirmationMessage : IMessageGenerator, IMessageFormatter
 
 Isso demonstra o uso do múltiplo contrato em C# para reforçar capacidades distintas.
 
-### ✔️ 3. Explicar quando usar implementação explícita de interface
+#### ✔️ 3. Explicar quando usar implementação explícita de interface
 
 A implementação explícita é útil quando:
 
@@ -73,7 +73,7 @@ string IMessageFormatter.Format(...)
 
 Isso impede que o método apareça como parte da API pública, sendo acessível apenas via cast para a interface.
 
-### ✔️ **4. Demonstrar o uso de generics com constraints
+#### ✔️ **4. Demonstrar o uso de generics com constraints
 
 Exemplo:
 ```
@@ -88,7 +88,7 @@ Evita erros de composição
 
 Ajuda a criar serviços mais reutilizáveis e seguros
 
-### ✔️ 5. Explicar por que evitar default interface members
+#### ✔️ 5. Explicar por que evitar default interface members
 
 Apesar de possível no C# moderno, eles:
 
