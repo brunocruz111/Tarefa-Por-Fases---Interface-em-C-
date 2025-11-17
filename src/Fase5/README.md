@@ -1,8 +1,4 @@
-# ✅ Fase 5 — Texto Completo (Explicação / README da fase)
-
-(Apenas texto conceitual; depois geramos os códigos e a estrutura de pastas.)
-
-## ✨ Fase 5 — Essenciais de Interfaces em C#
+# ✨ Fase 5 — Essenciais de Interfaces em C#
 
 A Fase 5 aprofunda o uso de interfaces no domínio, indo além da simples alternância de implementações.
 Enquanto a Fase 4 estabeleceu o contrato IMensagem e a composição plugável, agora o objetivo é:
