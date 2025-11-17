@@ -31,13 +31,13 @@ As classes estavam separadas adequadamente em Domain/Interfaces/Services
 
 Foco: tornamos o sistema plugável e testável.
 
-###✔️ Na Fase 5:
+### ✔️ Na Fase 5:
 
 Agora o sistema evolui para um nível maior de maturidade de design, onde entendemos que uma classe pode possuir múltiplas capacidades, e cada capacidade deve ser expressa como uma interface clara.
 
 Nesta fase vamos:
 
-### ✔️ 1. Criar duas interfaces do domínio
+#### ✔️ 1. Criar duas interfaces do domínio
 
 Por exemplo:
 
