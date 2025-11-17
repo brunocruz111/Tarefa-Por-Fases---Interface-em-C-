@@ -27,7 +27,7 @@ Usamos herança ou estrutura comum, mas o cliente ainda dependia de classes conc
 
 A fábrica (MensagemFactory) ainda possuía a responsabilidade de decidir qual classe instanciar, criando um novo acoplamento interno.
 
-➡️ Problema: sempre que surge um novo tipo de mensagem, tanto a fábrica quanto o cliente podem precisar mudar.
+### ➡️ Problema: sempre que surge um novo tipo de mensagem, tanto a fábrica quanto o cliente podem precisar mudar.
 
 Agora, na Fase 4 (com interface):
 
