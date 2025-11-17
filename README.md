@@ -41,6 +41,7 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
 [Fase2](./src/Fase2)|
 [Fase3](./src/Fase3)|
 [Fase4](./src/Fase4)|
+[Fase5](./src/Fase5)|
 
 ---
 
@@ -53,6 +54,7 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
 | *Fase 2* | Procedural mínimo (ex.: formatar texto) | 
 | *Fase 3* | OO sem interface | 
 | *Fase 4* | Interface plugável e testável | 
+| *Fase 5* | Essenciais de Interfaces em C | 
 
 ---
 
@@ -83,15 +85,19 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
  |    |     └── Objetivo.md      # conteúdo detalhado da Fase 3
  │    │     └── README.md
  |    ├── Fase4/
- |    |     └── MensagemAgendamento.cs
- |    |     └── MensagemConfirmacao.cs
- |    |     └── MensagemFactory.cs
- |    |     └── MensagemLembrete.cs
- |    |     └── MensagemPadrao.cs
- |    |     └── MensagemReagendamento.cs
  |    |     └── Program.cs      
  |    |     └── AgendaBem.Fase4.csproj      
  │    │     └── README.md        # conteúdo detalhado da Fase 4
+ |    |     ├── Domain/
+ |    |     |      └── MensagemAgendamento.cs
+ |    |     |      └── MensagemConfirmacao.cs
+ |    |     |      └── MensagemLembrete.cs
+ |    |     |      └── MensagemPadrao.cs
+ |    |     |      └── MensagemReagendamento.cs
+ |    |     |      ├── Interfaces/
+ |    |     |      |      └── IMensagem.cs
+ |    |     ├── Services/
+ |    |     |      └── MensagemFactory.cs
 ```
 ---
 
