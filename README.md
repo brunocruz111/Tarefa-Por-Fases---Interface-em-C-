@@ -40,7 +40,7 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
 [Fase1](./src/Fase1)|
 [Fase2](./src/Fase2)|
 [Fase3](./src/Fase3)|
-[Fase3](./src/Fase4)|
+[Fase4](./src/Fase4)|
 
 ---
 
