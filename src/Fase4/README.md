@@ -55,13 +55,13 @@ Ele recebe um IMensagem, e apenas isso importa.
 
 Agora, a decisão de qual mensagem usar é totalmente deslocada para o ponto de composição, que pode ser:
 
-a fábrica
+_a fábrica
 
-um serviço
+_um serviço
 
-um container de DI
+_um container de DI
 
-ou até uma escolha manual em testes
+_ou até uma escolha manual em testes
 
 Isso permite trocar a implementação sem tocar no cliente.
 
