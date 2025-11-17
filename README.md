@@ -144,6 +144,6 @@ Serão incluídas a partir da Fase 5/6 quando começarem os testes com dublês.
 
 ---
 
-🎯 Conclusão
+## 🎯 Conclusão
 
 O AgendaBem está sendo construído de maneira incremental, com foco em boas práticas de design, interfaces, testabilidade e arquitetura limpa — exatamente como proposto pelo professor.
