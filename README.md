@@ -17,44 +17,16 @@
 O AgendaBem é um sistema simplificado para geração de mensagens de agendamento em uma barbearia.
 Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fases:
 
-_Procedural
+### 📘 Sumário de Fases
 
-_OO
-
-_Interfaces
-
-_Repository
-
-_Testabilidade
-
-_ISP
-… e assim por diante.
-
-O repositório único garante rastreabilidade e permite observar de forma clara como o design amadurece fase após fase.
-
----
-
-## Links Âncoras
-
-[Fase0](./src/Fase0)|
-[Fase1](./src/Fase1)|
-[Fase2](./src/Fase2)|
-[Fase3](./src/Fase3)|
-[Fase4](./src/Fase4)|
-[Fase5](./src/Fase5)|
-
----
-
-## 📘 Sumário de Fases
-
-| Fase | Descrição |
-|------|------------|
-| *Fase 0* | Aquecimento conceitual – contratos de capacidade |
-| *Fase 1* | Heurística antes do código | 
-| *Fase 2* | Procedural mínimo (ex.: formatar texto) | 
-| *Fase 3* | OO sem interface | 
-| *Fase 4* | Interface plugável e testável | 
-| *Fase 5* | Essenciais de Interfaces em C | 
+| Fase | Descrição | Âncora |
+|------|------------|------|
+| *Fase 0* | Aquecimento conceitual – contratos de capacidade | [Fase0](./src/Fase0) |
+| *Fase 1* | Heurística antes do código | [Fase1](./src/Fase1)|
+| *Fase 2* | Procedural mínimo (ex.: formatar texto) | [Fase2](./src/Fase2)|
+| *Fase 3* | OO sem interface | [Fase3](./src/Fase3)|
+| *Fase 4* | Interface plugável e testável | [Fase4](./src/Fase4)|
+| *Fase 5* | Essenciais de Interfaces em C | [Fase5](./src/Fase5)|
 
 ---
 
@@ -98,6 +70,22 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
  |    |     |      |      └── IMensagem.cs
  |    |     ├── Services/
  |    |     |      └── MensagemFactory.cs
+ |    ├── Fase5/
+ |    |      ├── Program.cs
+ |    |      ├── README.md
+ |    |      ├── AgendaBem.Fase5.csproj
+ |    |      ├── Domain/
+ |    |      │    ├── Interfaces/
+ |    |      │    │     ├── IMessageGenerator.cs
+ |    |      │    │     └── IMessageFormatter.cs
+ |    |      │    ├── ConfirmationMessage.cs
+ |    |      │    ├── ReminderMessage.cs
+ |    |      │    └── DefaultMessage.cs
+ |    |      └── Services/
+ |    |            ├── MessageFactory.cs
+ |    |            ├── AppointmentMessageService.cs
+ |    |            └── MessageServiceOfT.cs
+
 ```
 ---
 
