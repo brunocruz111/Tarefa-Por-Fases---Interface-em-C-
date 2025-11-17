@@ -1,4 +1,4 @@
-#💡 Fase 4 — Interface Plugável e Testável
+# 💡 Fase 4 — Interface Plugável e Testável
 
 Nesta fase damos o passo mais importante da migração conceitual do projeto:
 sair de um modelo OO rígido (Fase 3) e entrar em um design baseado em contratos, permitindo alternância real entre implementações sem modificar o cliente.
