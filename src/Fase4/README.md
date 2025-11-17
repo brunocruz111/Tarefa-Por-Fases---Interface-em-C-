@@ -78,11 +78,11 @@ Console.WriteLine(msg.Gerar(nome, servico, dataHora));
 
 Antes, testar era difícil porque:
 
-o cliente instanciava classes concretas
+_o cliente instanciava classes concretas
 
-mudanças exigiam alterar código real
+_mudanças exigiam alterar código real
 
-não era possível simular mensagens falsas
+_não era possível simular mensagens falsas
 
 Agora, com o contrato IMensagem, podemos injetar um dublê:
 ```
