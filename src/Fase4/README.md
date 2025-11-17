@@ -32,12 +32,12 @@ A fábrica (MensagemFactory) ainda possuía a responsabilidade de decidir qual c
 Agora, na Fase 4 (com interface):
 
 Criamos um contrato único, por exemplo:
-
+```
 public interface IMensagem
 {
     string Gerar(string nome, string servico, DateTime dataHora);
 }
-
+```
 
 E então cada tipo de mensagem passa a implementar o contrato:
 ```
