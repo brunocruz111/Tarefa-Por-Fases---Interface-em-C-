@@ -128,6 +128,18 @@ _Cliente recebe dependência via injeção (direta ou via fábrica)
 _Testes agora aceitam dublês
 
 _Mudanças passam a acontecer em um único ponto
+### Fase 5 (Decisões de Design)
+
+A Fase 5 aprofunda o uso de interfaces no domínio, introduzindo conceitos essenciais para projetos profissionais em C#. O foco da fase foi compreender capacidades diferentes expressas por múltiplas interfaces e formas corretas de implementá-las. As principais decisões de design foram:
+
+- **Criação de múltiplas interfaces** no domínio (`IMessageGenerator` e `IMessageFormatter`), representando capacidades distintas.
+- **Implementação de múltiplas interfaces em uma mesma classe**, permitindo separar responsabilidades sem duplicar código.
+- **Uso de implementação explícita de interface**, evitando poluir a API pública da classe e separando claramente papéis (ex.: `IMessageFormatter` em `ConfirmationMessage`).
+- **Aplicação de generics com constraints** (`MessageServiceOfT<T> where T : IMessageGenerator, new()`), reforçando segurança de tipos e composição flexível.
+- Continuidade do padrão definido na Fase 4: **resolver pattern (B1)**, garantindo flexibilidade e testabilidade da composição de serviços.
+- Organização do código em pastas adequadas (`Domain`, `Interfaces`, `Services`, `Messages`), garantindo escalabilidade do projeto.
+
+Essas escolhas reforçam princípios de coesão, testabilidade e clareza arquitetural, preparando o domínio para fases mais avançadas como ISP, segregação de responsabilidades e repositórios.
 
 ---
 
@@ -147,7 +159,80 @@ _Mudanças passam a acontecer em um único ponto
 
 ## 🧪 Evidências de testes (quando aplicável)
 
-Serão incluídas a partir da Fase 5/6 quando começarem os testes com dublês.
+### 🔹 Fase 5 — Evidência de Testes
+
+Na Fase 5, o objetivo principal foi aprofundar o uso de interfaces e demonstrar como o design baseado em contratos facilita a testabilidade. Como parte da evidência, foram realizados testes conceituais usando:
+
+#### ✔️ 1. **Resolver Pattern (B1) com dublê**
+Foi criado um `FakeMessageGenerator` e injetado no serviço `AppointmentMessageService`, demonstrando que:
+- Não é necessário instanciar classes concretas reais.
+- O serviço depende apenas do contrato (`IMessageGenerator`).
+- O comportamento pode ser totalmente controlado em teste.
+
+**Resultado esperado exibido no console:**
+```
+[FAKE] Mensagem para Teste - Serviço
+```
+Isso prova que o dublê substituiu com sucesso a implementação real.
+
+#### ✔️ 2. **Teste de implementação explícita**
+Para validar o uso correto da implementação explícita, foi feito um cast:
+```
+if (confirmation is IMessageFormatter formatter)
+{
+    Console.WriteLine(formatter.FormatDetails(...));
+}
+```
+O resultado mostra que:
+
+_O método FormatDetails não aparece na API pública da classe.
+
+_A capacidade só é acessível enquanto IMessageFormatter, como esperado.
+
+#### ✔️ 3. Teste com genéricos e constraints
+
+Usando MessageServiceOfT<ReminderMessage>:
+
+_O compilador garante que apenas tipos válidos podem ser usados.
+
+_O serviço funciona tanto com:
+
+_uma instância existente (CreateFor)
+
+_quanto criando uma nova (CreateUsingNew).
+
+Saídas demonstram consistência:
+```
+Olá, Carlos! Lembrando do seu horário de Corte em 20/11 às 14:00.
+Olá, Ana! Lembrando do seu horário de Corte em 21/11 às 09:00.
+```
+#### ✔️ 4. Evidência de funcionamento integrado (Program.cs)
+
+Toda a integração das classes é exibida no terminal:
+
+_Mensagens geradas por fábrica
+
+_Resolver com fake
+
+_Implementação explícita funcionando
+
+_Serviços genéricos funcionando
+
+Essas execuções representam a evidência funcional da fase.
+
+## 📌 Conclusão dos testes da Fase 5
+
+A fase demonstra claramente que:
+
+_Interfaces bem definidas aumentam a testabilidade.
+
+_Múltiplas interfaces e implementações explícitas funcionam conforme esperado.
+
+_O uso de genéricos com constraints garante segurança de tipos.
+
+_O resolver pattern continua garantindo desacoplamento e flexibilidade.
+
+Assim, a Fase 5 cumpre seu objetivo ao mostrar designs que são fáceis de testar, evoluir e validar.
 
 ---
 
