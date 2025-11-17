@@ -69,7 +69,8 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
  │    │     └── README.md         
  |    ├── Fase2/
  |    |     └── Procedural.cs     # conteúdo detalhado da Fase 2
- │    │     └── README.md         
+ │    │     └── README.md
+ |    |     └── AgendaBem.Fase2.csproj   
  |    ├── Fase3/
  |    |     └── MensagemAgendamento.cs
  |    |     └── MensagemConfirmacao.cs
@@ -78,6 +79,7 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
  |    |     └── MensagemPadrao.cs
  |    |     └── MensagemReagendamento.cs
  |    |     └── Program.cs
+ |    |     └── AgendaBem.Fase3.csproj
  |    |     └── Objetivo.md      # conteúdo detalhado da Fase 3
  │    │     └── README.md
  |    ├── Fase4/
@@ -87,9 +89,9 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
  |    |     └── MensagemLembrete.cs
  |    |     └── MensagemPadrao.cs
  |    |     └── MensagemReagendamento.cs
- |    |     └── Program.cs
- |    |     └── AgendaBem.Fase4.csproj      # conteúdo detalhado da Fase 3
- │    │     └── README.md      
+ |    |     └── Program.cs      
+ |    |     └── AgendaBem.Fase4.csproj      
+ │    │     └── README.md        # conteúdo detalhado da Fase 4
 ```
 ---
 
