@@ -148,6 +148,7 @@ _Mudanças passam a acontecer em um único ponto
  Testes independentes de infraestrutura
 
  Mudanças pequenas e localizadas por fase
+ 
 ---
 
 ## 🧪 Evidências de testes (quando aplicável)
