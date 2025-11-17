@@ -109,31 +109,31 @@ Não há dependências externas além do SDK .NET.
 
 ---
 ## 🧱 Decisões de Design por Fase
-Fase 2 (procedural)
+### Fase 2 (procedural)
 
-Uso de switch/if expõe rigidez
+_Uso de switch/if expõe rigidez
 
-Modos adicionam complexidade no mesmo método
+_Modos adicionam complexidade no mesmo método
 
-Sem testabilidade independente
+_Sem testabilidade independente
 
-Fase 3 (OO sem interface)
+### Fase 3 (OO sem interface)
 
-Separação em classes específicas aumenta coesão
+_Separação em classes específicas aumenta coesão
 
-Fábrica ainda cria acoplamento concreto
+_Fábrica ainda cria acoplamento concreto
 
-Cliente continua dependente de classes reais
+_Cliente continua dependente de classes reais
 
-Fase 4 (interface plugável)
+### Fase 4 (interface plugável)
 
-Introdução de IMensagem como contrato
+_Introdução de IMensagem como contrato
 
-Cliente recebe dependência via injeção (direta ou via fábrica)
+_Cliente recebe dependência via injeção (direta ou via fábrica)
 
-Testes agora aceitam dublês
+_Testes agora aceitam dublês
 
-Mudanças passam a acontecer em um único ponto
+_Mudanças passam a acontecer em um único ponto
 
 ---
 
