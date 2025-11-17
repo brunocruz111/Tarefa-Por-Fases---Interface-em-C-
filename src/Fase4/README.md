@@ -120,5 +120,3 @@ _Possibilidade de múltiplas políticas de escolha
 _Testes unitários sem depender de strings reais
 
 _Código preparado para ISP, repositorios e políticas futuras
-
-### A partir daqui o projeto já entra em um padrão profissional de extensibilidade.
