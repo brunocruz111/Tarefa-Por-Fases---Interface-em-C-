@@ -17,17 +17,17 @@
 O AgendaBem é um sistema simplificado para geração de mensagens de agendamento em uma barbearia.
 Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fases:
 
-Procedural
+_Procedural
 
-OO
+_OO
 
-Interfaces
+_Interfaces
 
-Repository
+_Repository
 
-Testabilidade
+_Testabilidade
 
-ISP
+_ISP
 … e assim por diante.
 
 O repositório único garante rastreabilidade e permite observar de forma clara como o design amadurece fase após fase.
@@ -79,6 +79,16 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
  |    |     └── MensagemReagendamento.cs
  |    |     └── Program.cs
  |    |     └── Objetivo.md      # conteúdo detalhado da Fase 3
+ │    │     └── README.md
+ |    ├── Fase4/
+ |    |     └── MensagemAgendamento.cs
+ |    |     └── MensagemConfirmacao.cs
+ |    |     └── MensagemFactory.cs
+ |    |     └── MensagemLembrete.cs
+ |    |     └── MensagemPadrao.cs
+ |    |     └── MensagemReagendamento.cs
+ |    |     └── Program.cs
+ |    |     └── AgendaBem.Fase4.csproj      # conteúdo detalhado da Fase 3
  │    │     └── README.md      
 ```
 ---
@@ -87,9 +97,9 @@ O repositório único garante rastreabilidade e permite observar de forma clara 
 
 As fases que possuem código C# têm um Program.cs.
 Para rodar:
-
+```
 dotnet run
-
+```
 
 Em cada pasta de fase, execute o comando dentro dela.
 
