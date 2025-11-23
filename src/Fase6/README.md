@@ -19,7 +19,7 @@ A Fase 6 aplica o **ISP (Interface Segregation Principle)** no domínio. Se ante
 
 ---
 
-## 📌 Antes / Depois (texto curto)
+## 📌 Antes / Depois
 
 **Antes (exemplo):**  
 `INotificador` com vários métodos (confirmar, lembrar, reagendar, cancelar, promoções, e até detalhes de canal), forçando clientes a dependerem do que não usam.
