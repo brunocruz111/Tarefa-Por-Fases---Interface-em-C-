@@ -1,7 +1,7 @@
-using Fase06.Contracts;
 using Fase06.Domain;
+using Fase06.Domain.Interfaces;
 
-namespace Fase06.Channels;
+namespace Fase06.Services;
 
 public sealed class EmailNotifier :
     INotificaConfirmacao, INotificaReagendamento
