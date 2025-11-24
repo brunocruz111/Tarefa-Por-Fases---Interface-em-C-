@@ -29,6 +29,7 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
 | *Fase 5* | Essenciais de Interfaces em C | [Fase5](./src/Fase5)|
 | *Fase 6* | Repository CSV — persistência em arquivo | [Fase6](./src/Fase6)|
 | *Fase 7* | Repository JSON — persistência em JSON | [Fase7](./src/Fase7)|
+| *Fase 8* | ISP (Interface Segregation Principle) | [Fase8](./src/Fase8)|
 
 ---
 
@@ -91,6 +92,36 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
  |    |      ├── Program.cs
  |    |      ├── README.md
  |    |      ├── AgendaBem.Fase6.csproj
+ |    |      ├── Domain/
+ |    |      │    ├── Interfaces/
+ |    |      │    │     ├── INotificaConfirmacao.cs
+ |    |      │    │     ├── INotificaLembrete.cs
+ |    |      │    │     ├── IRepository.cs
+ |    |      │    │     └── INotificaReagendamento.cs
+ |    |      │    ├── CSVAgendamentoRepository.cs
+ |    |      │    └── Agendamento.cs
+ |    |      ├── Services/
+ |    |      |      ├── AppNotifier.cs
+ |    |      |      ├── EmailNotifier.cs
+ |    |      |      └── WhatsAppNotifier.cs
+ |    |      └── UseCases/
+ |    |      |      ├── ConfirmacaoService.cs
+ |    |      |      ├── LembreteService.cs
+ |    |      |      └── WhatsAppNotifier.cs
+ |    ├── Fase7/
+ |    |      ├── Program.cs
+ |    |      ├── README.md
+ |    |      ├── AgendaBem.Fase7.csproj
+ |    |      ├── Domain/
+ |    |      │    ├── Interfaces/
+ |    |      │    │     └── IAgendamentoRepository.cs
+ |    |      │    └── Agendamento.cs
+ |    |      └── UseCases/
+ |    |      |      └── AgendamentoService.cs
+ |    ├── Fase8/
+ |    |      ├── Program.cs
+ |    |      ├── README.md
+ |    |      ├── AgendaBem.Fase8.csproj
  |    |      ├── Domain/
  |    |      │    ├── Interfaces/
  |    |      │    │     ├── INotificaConfirmacao.cs
