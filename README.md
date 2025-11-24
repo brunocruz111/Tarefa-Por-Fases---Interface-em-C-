@@ -28,6 +28,7 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
 | *Fase 4* | Interface plugável e testável | [Fase4](./src/Fase4)|
 | *Fase 5* | Essenciais de Interfaces em C | [Fase5](./src/Fase5)|
 | *Fase 6* | Repository CSV — persistência em arquivo | [Fase6](./src/Fase6)|
+| *Fase 7* | Repository CSV — persistência em arquivo | [Fase7](./src/Fase7)|
 
 ---
 
