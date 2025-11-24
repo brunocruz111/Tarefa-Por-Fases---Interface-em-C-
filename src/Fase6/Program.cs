@@ -1,7 +1,9 @@
 using System;
 using System.Text;
-using Fase06.Channels;
+using System.Collections.Generic;
 using Fase06.Domain;
+using Fase06.Domain.Interfaces;
+using Fase06.Services;
 using Fase06.UseCases;
 
 public class Program
@@ -10,22 +12,36 @@ public class Program
     {
         Console.OutputEncoding = Encoding.UTF8;
 
-        var ag1 = new Agendamento("João",  "Corte",          new DateTime(2025,11,15,15,00,00));
-        var ag2 = new Agendamento("Marcos","Barba",          new DateTime(2025,11,16,10,30,00));
-        var ag3 = new Agendamento("Pedro", "Corte e Barba",  new DateTime(2025,11,20,18,00,00));
+        var repo = new CsvAgendamentoRepository("agendamentos.csv");
 
-        // composição: escolhemos o canal por capacidade (sem obrigar o consumidor a conhecer tudo)
+        // carregar agendamentos existentes
+        var ags = repo.Load();
+
+        // criar novos agendamentos com ID gerado pelo repositório
+        var ag1 = new Agendamento(repo.NextId(), "João",  "Corte",          new DateTime(2025,11,15,15,00,00));
+        var ag2 = new Agendamento(repo.NextId(), "Marcos","Barba",          new DateTime(2025,11,16,10,30,00));
+        var ag3 = new Agendamento(repo.NextId(), "Pedro", "Corte e Barba",  new DateTime(2025,11,20,18,00,00));
+
+        ags.AddRange(new[] { ag1, ag2, ag3 });
+
+        // salvar no CSV
+        repo.Save(ags);
+
+        // composição de canais
         var whatsapp = new WhatsAppNotifier();
         var email    = new EmailNotifier();
         var app      = new AppNotifier();
 
-        // cada caso de uso depende apenas do contrato mínimo
-        var confirmacao   = new ConfirmacaoService(whatsapp); // poderia trocar por email/app
-        var lembrete      = new LembreteService(app);         // app implementa lembrete
-        var reagendamento = new ReagendamentoService(email);  // email implementa reagendamento
+        // casos de uso
+        var confirmacao   = new ConfirmacaoService(whatsapp);
+        var lembrete      = new LembreteService(app);
+        var reagendamento = new ReagendamentoService(email);
 
         Console.WriteLine(confirmacao.Executar(ag1));
         Console.WriteLine(lembrete.Executar(ag2));
         Console.WriteLine(reagendamento.Executar(ag3));
+
+        Console.WriteLine("\nArquivo CSV atualizado com sucesso!");
     }
 }
+
