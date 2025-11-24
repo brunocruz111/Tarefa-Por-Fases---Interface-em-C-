@@ -1,5 +1,5 @@
-using Fase06.Domain.Interfaces;
 using Fase06.Domain;
+using Fase06.Domain.Interfaces;
 
 namespace Fase06.Services;
 
