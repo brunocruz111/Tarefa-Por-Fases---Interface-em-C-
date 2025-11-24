@@ -1,7 +1,7 @@
-using Fase06.Contracts;
+using Fase06.Domain.Interfaces;
 using Fase06.Domain;
 
-namespace Fase06.Channels;
+namespace Fase06.Services;
 
 public sealed class AppNotifier :
     INotificaConfirmacao, INotificaLembrete
