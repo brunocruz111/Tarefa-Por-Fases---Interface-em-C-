@@ -1,6 +1,6 @@
 using Fase06.Domain;
 
-namespace Fase06.Contracts;
+namespace Fase06.Domain.Interfaces;
 
 public interface INotificaConfirmacao
 {
