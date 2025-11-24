@@ -9,7 +9,7 @@ namespace Fase7.Contracts
         void Add(Agendamento ag);
         Agendamento? Get(Guid id);
 
-        
+        // NOVO: listar todos
         IReadOnlyList<Agendamento> ListAll();
 
         IEnumerable<Agendamento> ListByDateRange(DateTime de, DateTime ate);

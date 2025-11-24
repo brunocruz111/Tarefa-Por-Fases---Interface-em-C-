@@ -15,7 +15,7 @@ namespace Fase7.Domain
         public override string ToString()
         {
             var pt = new CultureInfo("pt-BR");
-           
+            // sem barras invertidas nas aspas do formato:
             return $"[{Id}] {Nome} - {Servico} - {Quando.ToString("dd/MM 'às' HH:mm", pt)}";
         }
     }

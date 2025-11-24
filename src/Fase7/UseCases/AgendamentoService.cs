@@ -36,7 +36,7 @@ namespace Fase7.UseCases
             return _repo.ListByDateRange(de, ate);
         }
 
-   
+        // NOVO: expõe o ListAll do repositório
         public IReadOnlyList<Agendamento> ListarTodos() => _repo.ListAll();
 
         public bool Reagendar(Guid id, DateTime novaData)
