@@ -53,7 +53,7 @@ A Fase 7 introduz um **repositório de agendamentos com persistência em JSON** 
 ## 📁 Onde está no repositório
 - Artefato: `src/Fase7/README.md` (este arquivo)  
 - Código: `src/Fase7/`  
-  - `Contracts/IAgendamentoRepository.cs`  
+  - `Domain/Interfaces/IAgendamentoRepository.cs`  
   - `Infra/JsonAgendamentoRepository.cs` (persistência JSON, `camelCase`, ignora `null`, trata arquivo ausente/vazio)  
   - `UseCases/AgendamentoService.cs`  
   - `Domain/Agendamento.cs`  

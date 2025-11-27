@@ -8,6 +8,7 @@ namespace Fase8.Infra
     internal sealed class JsonFileStore<T> where T : class, new()
     {
         private readonly string _path;
+
         private static readonly JsonSerializerOptions _opts = new()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -27,7 +28,8 @@ namespace Fase8.Infra
 
         public void Save(List<T> list)
         {
-            var dir = Path.GetDirectoryName(_path);
+           
+            var dir = System.IO.Path.GetDirectoryName(_path);
             if (!string.IsNullOrWhiteSpace(dir) && !Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 
@@ -35,6 +37,7 @@ namespace Fase8.Infra
             File.WriteAllText(_path, json);
         }
 
-        public string Path => _path;
+        
+        public string FilePath => _path;
     }
 }

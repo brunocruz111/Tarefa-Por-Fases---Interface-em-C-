@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Fase7.Contracts;
+using Fase7.Domain.Interfaces;
 using Fase7.Domain;
 
 namespace Fase7.UseCases

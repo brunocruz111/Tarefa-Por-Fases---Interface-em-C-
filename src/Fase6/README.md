@@ -56,7 +56,7 @@ Consumidores:
 ## 📁 Onde está no repositório
 - Artefato: `src/Fase6/README.md` (este arquivo)  
 - Código de exemplo (ilustrativo): `src/Fase6/`  
-  - `Contracts/` (`INotificaConfirmacao`, `INotificaLembrete`, `INotificaReagendamento`)  
+  - `Domain/Interfaces/` (`INotificaConfirmacao`, `INotificaLembrete`, `INotificaReagendamento`)  
   - `UseCases/` (serviços que consomem só o necessário)  
   - `Channels/` (WhatsApp/Email/App implementando capacidades)  
   - `Domain/Agendamento.cs` e `Program.cs` (demonstração)
