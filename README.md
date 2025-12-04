@@ -30,6 +30,9 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
 | *Fase 6* | Repository CSV — persistência em arquivo | [Fase6](./src/Fase6)|
 | *Fase 7* | Repository JSON — persistência em JSON | [Fase7](./src/Fase7)|
 | *Fase 8* | ISP (Interface Segregation Principle) | [Fase8](./src/Fase8)|
+| *Fase 9* | Dublês avançados e testes assíncronos | [Fase9](./src/Fase9)|
+| *Fase 10* | Cheiros e antídotos (refatorações com diffs pequenos) | [Fase10](./src/Fase10)|
+| *Fase 11* | Mini‑projeto de consolidação | [Fase11](./src/Fase11)|
 
 ---
 
@@ -176,153 +179,134 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
 ```
 ---
 
-## ▶️ Como executar
+## ▶️ Como Executar
 
-As fases que possuem código C# têm um Program.cs.
-Para rodar:
+As fases que possuem código C# incluem um arquivo Program.cs — o ponto de entrada da aplicação.
+
+Para executar qualquer fase:
 ```
 dotnet run
 ```
 
-Em cada pasta de fase, execute o comando dentro dela.
+Basta acessar a pasta correspondente da fase antes de rodar o comando.
 
-Não há dependências externas além do SDK .NET.
-
----
-## 🧱 Decisões de Design por Fase
-### Fase 2 (procedural)
-
-_Uso de switch/if expõe rigidez
-
-_Modos adicionam complexidade no mesmo método
-
-_Sem testabilidade independente
-
-### Fase 3 (OO sem interface)
-
-_Separação em classes específicas aumenta coesão
-
-_Fábrica ainda cria acoplamento concreto
-
-_Cliente continua dependente de classes reais
-
-### Fase 4 (interface plugável)
-
-_Introdução de IMensagem como contrato
-
-_Cliente recebe dependência via injeção (direta ou via fábrica)
-
-_Testes agora aceitam dublês
-
-_Mudanças passam a acontecer em um único ponto
-### Fase 5 (Decisões de Design)
-
-A Fase 5 aprofunda o uso de interfaces no domínio, introduzindo conceitos essenciais para projetos profissionais em C#. O foco da fase foi compreender capacidades diferentes expressas por múltiplas interfaces e formas corretas de implementá-las. As principais decisões de design foram:
-
-- **Criação de múltiplas interfaces** no domínio (`IMessageGenerator` e `IMessageFormatter`), representando capacidades distintas.
-- **Implementação de múltiplas interfaces em uma mesma classe**, permitindo separar responsabilidades sem duplicar código.
-- **Uso de implementação explícita de interface**, evitando poluir a API pública da classe e separando claramente papéis (ex.: `IMessageFormatter` em `ConfirmationMessage`).
-- **Aplicação de generics com constraints** (`MessageServiceOfT<T> where T : IMessageGenerator, new()`), reforçando segurança de tipos e composição flexível.
-- Continuidade do padrão definido na Fase 4: **resolver pattern (B1)**, garantindo flexibilidade e testabilidade da composição de serviços.
-- Organização do código em pastas adequadas (`Domain`, `Interfaces`, `Services`, `Messages`), garantindo escalabilidade do projeto.
-
-Essas escolhas reforçam princípios de coesão, testabilidade e clareza arquitetural, preparando o domínio para fases mais avançadas como ISP, segregação de responsabilidades e repositórios.
+### ✔ Requisitos: apenas .NET SDK
+### ✔ Nenhuma dependência externa adicional
 
 ---
 
-## ☑️ Checklist de Qualidade
+## 🧱 Decisões de Design (Visão Geral)
 
- Contratos coesos
+Ao longo do projeto, o AgendaBem evolui de forma incremental, aplicando princípios fundamentais de desenvolvimento de software.
 
- Alternância sem alterar o cliente
+### 💡 1. Transição do Procedural para OO
 
- Sem switch/if nas regras de negócio das fases avançadas
+Primeiro contato com mensagens de agendamento como funções simples.
 
- Testes independentes de infraestrutura
+Evolução para classes distintas, com responsabilidades específicas.
 
- Mudanças pequenas e localizadas por fase
+Uso inicial de fábricas para criar objetos concretos.
+
+### 💡 2. Introdução de Interfaces
+
+Permitiu que o cliente não dependesse mais de implementações concretas.
+
+Tornou possível testar serviços de forma isolada.
+
+Criou contratos estáveis para evolução incremental.
+
+### 💡 3. Segregação de Responsabilidades
+
+Princípio SRP aplicado continuamente.
+
+Cada classe passou a representar uma única capacidade.
+
+Redução de acoplamento e maior facilidade de manutenção.
+
+### 💡 4. Persistência por Repositórios
+
+Abstração de dados através de repositories.
+
+Implementações em CSV, JSON e memória.
+
+Permuta entre implementações sem alterar casos de uso.
+
+### 💡 5. Testes e Dublês
+
+Uso de Fakes, Stubs e Mocks.
+
+Testes assíncronos e validação comportamental.
+
+Serviços dependem apenas de interfaces → testabilidade máxima.
+
+### 💡 6. Refatorações Progressivas
+
+Redução de condicionais (switch/if) na regra de negócio.
+
+Remoção de cheiros de código.
+
+Divisão de contratos com ISP.
+
+Aplicação de padrões como Factory, Resolver e Repository.
+
+---
+
+## 🧪 Evidências de Testabilidade
+
+O projeto demonstra, ao longo da evolução:
+
+### ✔ Inversão de Dependências
+
+Dependências concretas substituídas por contratos (interfaces).
+
+### ✔ Substituição Fácil por Dublês
+
+Permite executar testes independentes de infraestrutura.
+
+### ✔ Assinaturas Assíncronas
+
+Comportamentos reais podem ser simulados sem bloquear a aplicação.
+
+### ✔ Implementações Explícitas
+
+Métodos adicionais só aparecem sob o contrato adequado, mantendo a API limpa.
+
+### ✔ Genéricos com Constraints
+
+Aumentam a segurança de tipos e evitam erros de design.
+
+Esses pontos juntos garantem um domínio sólido, testável e expressivo.
+
+---
+
+## ☑️ Checklist Geral de Qualidade
+
+ Uso consistente de contratos coesos
+
+ Mudanças isoladas e seguras
+
+ Ausência de condicionais extensas em fases avançadas
+
+ Serviços testáveis sem dependências externas
+
+ Estrutura de pastas clara e escalável
+
+ Evolução incremental planejada
  
 ---
 
-## 🧪 Evidências de testes (quando aplicável)
+##🎯 Conclusão
 
-### 🔹 Fase 5 — Evidência de Testes
+O AgendaBem é um projeto didático que demonstra de forma progressiva:
 
-Na Fase 5, o objetivo principal foi aprofundar o uso de interfaces e demonstrar como o design baseado em contratos facilita a testabilidade. Como parte da evidência, foram realizados testes conceituais usando:
+princípios fundamentais de design orientado a objetos
 
-#### ✔️ 1. **Resolver Pattern (B1) com dublê**
-Foi criado um `FakeMessageGenerator` e injetado no serviço `AppointmentMessageService`, demonstrando que:
-- Não é necessário instanciar classes concretas reais.
-- O serviço depende apenas do contrato (`IMessageGenerator`).
-- O comportamento pode ser totalmente controlado em teste.
+crescimento incremental de arquitetura
 
-**Resultado esperado exibido no console:**
-```
-[FAKE] Mensagem para Teste - Serviço
-```
-Isso prova que o dublê substituiu com sucesso a implementação real.
+separação clara de responsabilidades
 
-#### ✔️ 2. **Teste de implementação explícita**
-Para validar o uso correto da implementação explícita, foi feito um cast:
-```
-if (confirmation is IMessageFormatter formatter)
-{
-    Console.WriteLine(formatter.FormatDetails(...));
-}
-```
-O resultado mostra que:
+testabilidade de ponta a ponta
 
-_O método FormatDetails não aparece na API pública da classe.
+boas práticas adotadas no desenvolvimento profissional em C#
 
-_A capacidade só é acessível enquanto IMessageFormatter, como esperado.
-
-#### ✔️ 3. Teste com genéricos e constraints
-
-Usando MessageServiceOfT<ReminderMessage>:
-
-_O compilador garante que apenas tipos válidos podem ser usados.
-
-_O serviço funciona tanto com:
-
-_uma instância existente (CreateFor)
-
-_quanto criando uma nova (CreateUsingNew).
-
-Saídas demonstram consistência:
-```
-Olá, Carlos! Lembrando do seu horário de Corte em 20/11 às 14:00.
-Olá, Ana! Lembrando do seu horário de Corte em 21/11 às 09:00.
-```
-#### ✔️ 4. Evidência de funcionamento integrado (Program.cs)
-
-Toda a integração das classes é exibida no terminal:
-
-_Mensagens geradas por fábrica
-
-_Resolver com fake
-
-_Implementação explícita funcionando
-
-_Serviços genéricos funcionando
-
-Essas execuções representam a evidência funcional da fase.
-
-## 📌 Conclusão dos testes da Fase 5
-
-A fase demonstra claramente que:
-
-_Interfaces bem definidas aumentam a testabilidade.
-
-_Múltiplas interfaces e implementações explícitas funcionam conforme esperado.
-
-_O uso de genéricos com constraints garante segurança de tipos.
-
-_O resolver pattern continua garantindo desacoplamento e flexibilidade.
-
-Assim, a Fase 5 cumpre seu objetivo ao mostrar designs que são fáceis de testar, evoluir e validar.
-
----
-
-## 🎯 Conclusão
-
-O AgendaBem está sendo construído de maneira incremental, com foco em boas práticas de design, interfaces, testabilidade e arquitetura limpa — exatamente como proposto pelo professor.
+Cada fase expande e melhora o código, preparando um terreno sólido para sistemas reais.
