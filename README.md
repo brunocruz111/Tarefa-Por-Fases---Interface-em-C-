@@ -138,6 +138,39 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
  |    |      |      ├── ConfirmacaoService.cs
  |    |      |      ├── LembreteService.cs
  |    |      |      └── WhatsAppNotifier.cs
+ |    ├── Fase9/
+ |    |      ├── Program.cs
+ |    |      ├── README.md                     # conteúdo detalhado da Fase 9
+ |    |      ├── AgendaBem.Fase9.csproj
+ |    |      ├── Domain/
+ |    |      |      ├── Agendamento.cs
+ |    |      |      └── Contracts.cs             # interfaces e contratos da fase
+ |    |      ├── Doubles/
+ |    |      |      └── Fakes.cs                 # mocks/fakes para testes ou simulações
+ |    |      └── Services/
+ |    |      └── AgendamentoService.cs    # caso de uso da fase
+ |    ├── Fase10/
+ |    |      ├── Program.cs
+ |    |      ├── README.md                     # conteúdo detalhado da Fase 10
+ |    |      ├── AgendaBem.Fase10.csproj
+ |    |      └── Refactorings.cs               # arquivo demonstrando refatorações aplicadas
+ |    ├──Fase11/
+ |    |      ├── Program.cs
+ |    |      ├── README.md                     # conteúdo detalhado da Fase 11
+ |    |      ├── AgendaBem.Fase11.csproj
+ |    |      ├── Domain/
+ |    |      ├── Agendamento.cs
+ |    |      └── Interfaces/
+ |    |      |      ├── IReadRepository.cs
+ |    |      |      └── IWriteRepository.cs
+ |    |      ├── Infra/
+ |    |      |      ├── InMemoryBookRepository.cs
+ |    |      |      └── JsonBookRepository.cs
+ |    |      ├── Services/
+ |    |      |      └── AgendaService.cs
+ |    |      ├── catalogo_livros.json
+ |    |      └── agenda_db.json
+
 
 
 ```
