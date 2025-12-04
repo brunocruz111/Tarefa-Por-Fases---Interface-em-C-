@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "a9c216be-84e6-4411-a0d1-9ba33164a79f",
+    "NomeCliente": "Jo\u00E3o da Silva",
+    "Servico": "Barba",
+    "DataHora": "2025-12-01T14:00:00"
+  },
+  {
+    "Id": "1986033f-4294-4c48-9447-1ec48e9bcfd0",
+    "NomeCliente": "Maria Oliveira",
+    "Servico": "Corte",
+    "DataHora": "2025-12-01T11:00:00"
+  },
+  {
+    "Id": "d2ff3b83-9e70-4a0d-a3a8-e859ebf54fb7",
+    "NomeCliente": "Jo\u00E3o da Silva",
+    "Servico": "Barba",
+    "DataHora": "2025-12-01T14:00:00"
+  },
+  {
+    "Id": "a5493ef3-8b6b-4166-85bc-6d12e753e54e",
+    "NomeCliente": "Maria Oliveira",
+    "Servico": "Corte",
+    "DataHora": "2025-12-01T11:00:00"
+  }
+]
