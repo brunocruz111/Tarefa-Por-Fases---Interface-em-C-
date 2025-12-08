@@ -1,71 +1,30 @@
-# Fase 10 — Cheiros e Antídotos (refatoração guiada por princípios)
+# Fase 10 — Cheiros e Antídotos (AgendaBem)
 
-A Fase 10 foca na identificação de **Cheiros de Código (Code Smells)** acumulados nas fases anteriores e na aplicação de **Antídotos (Refatorações)**. O objetivo é melhorar o design e a testabilidade guiando-se por princípios **SOLID** (como DIP, OCP e ISP), sem alterar o comportamento do sistema.
-
----
-
-## 🔙 O que mudou da Fase 9 para a Fase 10
-
-**✔️ Na Fase 9:**
-- O foco era **comportamental**: garantir que o sistema lide com assincronismo, falhas e retentativas usando dublês avançados.
-- Aceitávamos certo acoplamento estrutural em favor da funcionalidade.
-
-**✔️ Na Fase 10:**
-- O foco é **estrutural**: olhamos para o código existente para sanar dívidas técnicas.
-- Identificamos pontos rígidos (como `switchs` ou I/O estático) e aplicamos correções cirúrgicas:
-  - **I/O Estático** → Substituído por Abstração (`IFileSystem`).
-  - **Decisões Espalhadas** → Substituídas por Catálogos Dinâmicos (Dicionários).
+Nesta fase, aplicamos refatorações cirúrgicas no código do **AgendaBem** para corrigir problemas de design identificados nas fases anteriores (Fase 4 e Fase 7).
 
 ---
 
-## 📌 Cheiros Identificados & Antídotos
+## 📋 Refatorações Aplicadas
 
-**1. [cite_start]Acoplamento com I/O Estático (Testes Lentos)** [cite: 100, 101]
-- *Cheiro:* Uso direto de `File.ReadAllText` impede testes rápidos em memória.
-- *Antídoto:* **DIP + Seams (Costuras)**. Extração de `IFileSystem` para permitir uso de `FakeFileSystem`.
+### 1. Desacoplamento de I/O (Repositório)
+* **Cheiro:** O `JsonAgendamentoRepository` dependia diretamente de `File.ReadAllText`, impedindo testes rápidos.
+* **Onde:** `src/Fase10/Infra/JsonRepositoryRefatorado.cs`
+* **Antídoto:** Introduzimos `IFileSystem`. Agora injetamos `FakeFileSystem` nos testes e `RealFileSystem` na produção.
+* **Benefício:** Testes de repositório rodam em memória.
 
-**2. [cite_start]Switch/Decisão Espalhada (Violação OCP)** [cite: 99, 100]
-- *Cheiro:* `switch` na Factory exige alteração da classe para cada novo tipo.
-- *Antídoto:* **Replace Conditional with Map**. Uso de Dicionário para registrar tipos dinamicamente (Extensibilidade).
-
-**3. [cite_start]Lista Longa de Parâmetros** [cite: 102]
-- *Cheiro:* Métodos recebendo `(nome, serviço, data)` individualmente.
-- *Antídoto:* **Preserve Whole Object**. Passagem do objeto `Agendamento` completo.
-
-**4. [cite_start]Interface Gorda (Fat Interface)** [cite: 96, 97]
-- *Cheiro:* Clientes dependendo de métodos que não usam (ex: Leitura dependendo de `Add`).
-- *Antídoto:* **ISP** (Segregação em `IRead` e `IWrite`, consolidada na Fase 8).
+### 2. Extensibilidade (Factory de Mensagens)
+* **Cheiro:** A `MensagemFactory` usava um `switch` hardcoded. Para adicionar "Promoção", tínhamos que alterar a classe.
+* **Onde:** `src/Fase10/Services/MensagemFactoryRefatorada.cs`
+* **Antídoto:** Substituímos o `switch` por um `Dictionary` (Catálogo).
+* **Benefício:** Novos tipos de mensagem podem ser registrados dinamicamente (OCP).
 
 ---
 
-## 🧠 Como validamos (Prova de Segurança)
+## ▶️ Execução
 
-**Teste de I/O (Sem disco):**
-- O `RepositorioRefatorado` persiste dados no `FakeFileSystem` (dicionário em memória).
-- *Resultado:* Teste roda em milissegundos e prova o desacoplamento do disco físico.
+O programa demonstra:
+1. Um agendamento sendo salvo em memória (sem criar arquivo no disco).
+2. Uma nova mensagem de "Promoção" sendo criada sem alterar a Factory original.
 
-**Teste de Factory (Extensibilidade):**
-- Injetamos uma nova regra (`MsgPromo`) no catálogo da `FactoryRefatorada` em tempo de execução.
-- *Resultado:* O sistema cria o novo tipo sem que o código fonte da Factory tenha sido tocado (respeitando OCP).
-
----
-
-## ✅ Ganhos principais
-- **Manutenibilidade:** Código aberto para extensão, fechado para modificação (OCP).
-- **Testabilidade:** Fim da dependência de disco/rede em testes unitários (DIP).
-- **Clareza:** Contratos focados e explícitos (ISP).
-- **Segurança:** Refatorações pequenas que mantêm o comportamento original.
-
----
-
-## 📁 Onde está no repositório
-- Artefato: `src/Fase10/README.md` (este arquivo)
-- Código: `src/Fase10/`
-  - `AgendaBem.Fase10.csproj`
-  - `Refactorings.cs` (**Antídotos**: `IFileSystem`, `FakeFileSystem`, `FactoryRefatorada`)
-  - `Program.cs` (demonstração: prova que o repositório funciona sem disco e a factory aceita novos tipos)
-
-**Como executar:**
 ```bash
-cd src/Fase10
 dotnet run

@@ -1,61 +1,58 @@
 using System;
-using Fase10.Refactorings;
+using Fase10.Infra;
+using Fase10.Services;
 
 public class Program
 {
     public static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("=== FASE 10: Cheiros e Antídotos ===\n");
+        Console.WriteLine("=== FASE 10: Refatorações no AgendaBem ===\n");
 
-        TesteSemDisco();
+        TesteRepositorioSemDisco();
         Console.WriteLine();
-        TesteExtensibilidadeFactory();
+        TesteFactoryExtensivel();
     }
 
-    // PROVA 1: Testando repositório sem tocar no HD (rápido e seguro)
-    static void TesteSemDisco()
+    static void TesteRepositorioSemDisco()
     {
-        Console.WriteLine("--- 1. Teste de I/O com Fake (Memória) ---");
-        
+        Console.WriteLine("--- 1. Repositório com FakeFileSystem ---");
+
         var fakeFs = new FakeFileSystem();
-        var repo = new RepositorioRefatorado(fakeFs, "banco.txt");
+        var repo = new JsonRepositoryRefatorado(fakeFs, "agenda.json");
 
-        // Ação
-        repo.Salvar("Dados Importantes");
+        repo.Adicionar(new Agendamento(Guid.NewGuid(), "Carlos", "Corte"));
 
-        // Verificação: Checamos a memória do Fake, não o disco C:\
-        bool salvou = fakeFs.Arquivos.ContainsKey("banco.txt") && 
-                      fakeFs.Arquivos["banco.txt"] == "Dados Importantes";
-
-        if (salvou)
-            Console.WriteLine("✅ SUCESSO: Repositório persistiu na memória (Fake).");
+        if (fakeFs.Arquivos.ContainsKey("agenda.json"))
+        {
+            Console.WriteLine("Sucesso: Agendamento salvo na memória.");
+            Console.WriteLine($"   Conteúdo: {fakeFs.Arquivos["agenda.json"]}");
+        }
         else
-            Console.WriteLine("❌ FALHA: Não persistiu corretamente.");
+        {
+            Console.WriteLine("Erro: Nada foi salvo.");
+        }
     }
 
-    // PROVA 2: Adicionando um novo tipo de mensagem SEM mexer na classe Factory
-    static void TesteExtensibilidadeFactory()
+    static void TesteFactoryExtensivel()
     {
-        Console.WriteLine("--- 2. Teste de Extensibilidade (OCP) ---");
+        Console.WriteLine("--- 2. Factory com Catálogo (OCP) ---");
 
-        var factory = new FactoryRefatorada();
+        var factory = new MensagemFactoryRefatorada();
 
-        // 1. Testa tipo existente
-        Console.WriteLine($"Tipo 'ola': {factory.Criar("ola").Gerar()}");
+        Console.WriteLine("Normal: " + factory.Criar("confirmacao").Format("Ana", "Unha"));
 
-        // 2. O Antídoto permite isso: Registrar novo tipo em tempo de execução
-        factory.Registrar("promo", () => new MsgPromo());
-        
-        var msgNova = factory.Criar("promo");
-        bool funcionou = msgNova.Gerar() == "Promoção 50% OFF!";
-        
-        if (funcionou)
-            Console.WriteLine("✅ SUCESSO: Novo tipo 'promo' adicionado sem alterar a Factory.");
-        else
-            Console.WriteLine("❌ FALHA: Extensão falhou.");
+        factory.Registrar("promo", () => new MsgPromocao());
+
+        var msgPromo = factory.Criar("promo");
+        Console.WriteLine("Novo Tipo: " + msgPromo.Format("Ana", "Unha")); 
+
+        if (msgPromo is MsgPromocao)
+            Console.WriteLine("Sucesso: Tipo 'promo' injetado sem alterar código da Factory.");
     }
 
-    // Classe criada apenas para o teste, simulando um plugin ou nova feature
-    class MsgPromo : IMensagem { public string Gerar() => "Promoção 50% OFF!"; }
+    class MsgPromocao : IMensagem
+    {
+        public string Format(string n, string s) => $"Parabéns {n}, você ganhou 10% no serviço {s}!";
+    }
 }
