@@ -110,7 +110,7 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
  |    |      └── UseCases/
  |    |      |      ├── ConfirmacaoService.cs
  |    |      |      ├── LembreteService.cs
- |    |      |      └── WhatsAppNotifier.cs
+ |    |      |      └── ReagendamentoService.cs
  |    ├── Fase7/
  |    |      ├── Program.cs
  |    |      ├── README.md
