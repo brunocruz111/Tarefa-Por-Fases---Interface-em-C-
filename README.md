@@ -154,16 +154,25 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
  |    |      └── AgendamentoService.cs    # caso de uso da fase
  |    ├── Fase10/
  |    |      ├── README.md                     # conteúdo detalhado da Fase 10
- |    ├──Fase11/
+ |    ├──Phase11MiniProject/
  |    |      ├── Program.cs
  |    |      ├── README.md                     # conteúdo detalhado da Fase 11
- |    |      ├── AgendaBem.Fase11.csproj
+ |    |      ├── Phase11MiniProject.csproj
  |    |      ├── Domain/
- |    |      ├── Agendamento.cs
- |    |      └── Interfaces/
- |    |      |      ├── IReadRepository.cs
- |    |      |      └── IWriteRepository.cs
- |    |      ├── Infra/
+ |    |          ├── Appointment.cs
+ |    |          ├── Contracts/
+ |    |                ├── IAsyncRepository.cs
+ |    |                └── IClock.cs
+ |    |          └── Interfaces/
+ |    |                ├── IConfirmationNotifier.cs
+ |    |                ├── IReadRepository.cs
+ |    |                ├── IReminderNotifier.cs
+ |    |                ├── IRescheduleNotifier.cs
+ |    |                ├── SystemClock.cs
+ |    |                └── IWriteRepository.cs
+ |    |      ├── Infraestructure/
+ |    |      |      ├── Context/
+ |    |                   └── AppDbContext.cs
  |    |      |      ├── InMemoryBookRepository.cs
  |    |      |      └── JsonBookRepository.cs
  |    |      ├── Services/
