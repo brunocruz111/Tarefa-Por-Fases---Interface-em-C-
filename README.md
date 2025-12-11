@@ -31,8 +31,8 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
 | *Fase 7* | Repository JSON — persistência em JSON | [Fase7](./src/Fase7)|
 | *Fase 8* | ISP (Interface Segregation Principle) | [Fase8](./src/Fase8)|
 | *Fase 9* | Dublês avançados e testes assíncronos | [Fase9](./src/Fase9)|
-| *Fase 10* | Cheiros e antídotos (refatorações com diffs pequenos) | [Fase10](./src/Phase11MiniProject)|
-| *Fase 11* | Mini‑projeto de consolidação | [Fase11](./src/Fase11)|
+| *Fase 10* | Cheiros e antídotos (refatorações com diffs pequenos) | [Fase10](./src/Fase10)|
+| *Fase 11* | Mini‑projeto de consolidação | [Fase11](./src/Phase11MiniProject)|
 
 ---
 
