@@ -153,10 +153,7 @@ Ele evolui progressivamente pela abordagem recomendada em sala, seguindo as fase
  |    |      └── Services/
  |    |      └── AgendamentoService.cs    # caso de uso da fase
  |    ├── Fase10/
- |    |      ├── Program.cs
  |    |      ├── README.md                     # conteúdo detalhado da Fase 10
- |    |      ├── AgendaBem.Fase10.csproj
- |    |      └── Refactorings.cs               # arquivo demonstrando refatorações aplicadas
  |    ├──Fase11/
  |    |      ├── Program.cs
  |    |      ├── README.md                     # conteúdo detalhado da Fase 11
